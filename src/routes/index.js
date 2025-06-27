@@ -1,7 +1,9 @@
-const Router = require('express')
-const router = Router()
-const { addPlayer } = require('../controllers/leaderBoard.controller')
+const express = require('express')
+const routes = express.Router()
+const  leaderBoardRouter  = require('./leaderBoard.route')
+const apiCahningRouter = require('./api-caching.route')
 
-router.post('/', addPlayer);
+routes.use("/leaderBoardRouter", leaderBoardRouter)
+routes.use("/api-caching", apiCahningRouter)
 
-module.exports = router
+module.exports = routes

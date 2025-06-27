@@ -1,10 +1,10 @@
 const Router = require('express')
-const router = Router()
+const leaderBoardRouter = Router()
 const { addPlayer, getTopPlayers, getPlayerRank, getPlayerScore } = require('../controllers/leaderBoard.controller')
 
-router.post('/', addPlayer);
-router.get('/top/:size', getTopPlayers);
-router.get('/name/:name', getPlayerRank);
-router.get('/score/:name', getPlayerScore);
+leaderBoardRouter.post('/', addPlayer);
+leaderBoardRouter.get('/top/:size', getTopPlayers);
+leaderBoardRouter.get('/name/:name', getPlayerRank);
+leaderBoardRouter.get('/score/:name', getPlayerScore);
 
-module.exports = router
+module.exports = leaderBoardRouter

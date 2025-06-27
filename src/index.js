@@ -5,10 +5,10 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 const redisClient = require('./config/database');
-const leaderBoardRoutes = require('./routes/leaderBoard.route');
+const routes = require('./routes/index');
 
 app.use(express.json());
-app.use("/api", leaderBoardRoutes);
+app.use("/api", routes);
 
 // Sample route
 app.get('/', (req, res) => {
